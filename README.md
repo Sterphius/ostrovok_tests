@@ -91,6 +91,7 @@ env context=$CONTEXT pytest $TESTS_FOLDER
 ### Видео о прохождении тестов
 * UI browser tests  
 <img src="resources/test_run.gif" alt="video test" border="0" />
+
 * Mobile  
 <img src="resources/mobile.gif" alt="video test" border="0" />
 
