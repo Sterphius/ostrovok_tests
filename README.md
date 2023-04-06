@@ -35,7 +35,6 @@
 Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Telegram
 
 <p  align="center">
-<code>
   <img src="resources/python.png" width="40" height="40"  alt="Python"/>
   <img src="resources/pytest.png" width="40" height="40"  alt="Pytest"/>
   <img src="resources/selene.png" width="50" height="40"  alt="Selene"/>
@@ -45,7 +44,6 @@ Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Te
   <img src="resources/Jenkins.jpg" width="40" height="40"  alt="Jenkins"/>
   <img src="resources/selenoid.png" width="40" height="40"  alt="Selenoid"/>
   <img src="resources/telegram-logo.png" width="40" height="40"  alt="Telegram"/>
-</code>
 </p>
 
 ## Как запустить
