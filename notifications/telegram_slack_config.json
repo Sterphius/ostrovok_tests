@@ -1,0 +1,21 @@
+{
+  "base": {
+    "project": "Ostrovok tests",
+    "environment": "Prod",
+    "comment": "API, Mobile, UI tests",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "*****:*****",
+    "chat": "*****",
+    "replyTo": ""
+  },
+  "slack": {
+    "token": "****-*****",
+    "chat": "#****_notifications",
+    "replyTo": ""
+  }
+}
