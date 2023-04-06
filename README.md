@@ -3,39 +3,38 @@
 
 <img src="resources/Ostrovok_logo.png" alt="Ostrovok_logo" border="0" />
 
-## Покрыт следующий функционал
-* UI - тесты
-    * ✅ Проверка результатов поиска
-    * ✅ Проверка логина с помощью e-mail
-    * ✅ Проверка изменения языка
-    * ✅ Проверка локализации заголовка
-    * ✅ Проверка поиска и изменения валюты
-    * ✅ Проверка поиска неизвестной валюты
+## Реализованы тесты:
+* UI
+  * ✅ Результатов поиска
+  * ✅ Логина с помощью e-mail
+  * ✅ Изменения языка
+  * ✅ Локализации заголовка
+  * ✅ Поиска и изменения валюты
+  * ✅ Поиска неизвестной валюты
     
-
-* API тесты
-  * ✅ Проверка получения списка популярных направлений
-  * ✅ Проверка получения ограничений в связи с COVID-19 \
+* API
+  * ✅ Получения списка популярных направлений
+  * ✅ Получения ограничений в связи с COVID-19 \
   С  параметрами:
     > country_code: ['us', 'ru'] \
     > lang: ['en', 'ru']
-  * ✅ Проверка списка возвращаемых праздников
-  * ✅ Проверка истории поиска
-  * ✅ Проверка поиска \
+  * ✅ Списка возвращаемых праздников
+  * ✅ Истории поиска
+  * ✅ Проверка результатов поиска \
     С  параметрами:
     > query: ['Moscow, Russia', 'Istanbul, Turkiye'] \
     > locale: ['en', 'ru']
 
-* Android тесты
-  * ✅ Проверка поиска отелей для популярного города
-  * ✅ Проверка логина пользователя
-  * ✅ Проверка отображения телефонов поддержки
+* Android
+  * ✅ Результат поиска отелей для популярного города
+  * ✅ Логина пользователя с помощью e-mail
+  * ✅ Отображения телефонов поддержки
 
 
 ## Технологический стек
 Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Telegram
 
-<p  align="left">
+<p  align="center">
 <code>
   <img src="resources/python.png" width="40" height="40"  alt="Python"/>
   <img src="resources/pytest.png" width="40" height="40"  alt="Pytest"/>
@@ -99,16 +98,13 @@ env context=$CONTEXT pytest $TESTS_FOLDER
 
 ### Запуск в Jenkins
 Статистика по запускам <br >
-<img src="resources/jenkins stat.png" alt="Статистика по запускам" border="0">
+<img src="resources/allure_stats.png" alt="Статистика по запускам" border="0">
 
 ### Параметры запуска <br >
 <img src="resources/jenkins_params.png" alt="Jenkins" border="0">
 
 ### Отчёт о прохождении автотестов в Allure Report
-<img src="resources/allure2.png" alt="Allure-Report" border="0">
-
-### Список автотестов в Allure Report
-<img src="resources/allure_list.png" alt="Allure-Report-2" border="0">
+<img src="resources/allure_report.png" alt="Allure-Report" border="0">
 
 ### Уведомления о прохождении автотестов в Telegram
 <img src="resources/telegram_notification.png" alt="telegram-bot" border="0">
