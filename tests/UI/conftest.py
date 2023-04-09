@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 
 from tests.UI.pages.ostrovok_main import get_current_language
 from tests.UI.pages.resources import currencies, lang_title
-from utils import attachments
+from utils.allure import attachments
 
 
 @pytest.fixture(scope='function', autouse=False)

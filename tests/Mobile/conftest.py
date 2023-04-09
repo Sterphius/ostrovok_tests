@@ -9,7 +9,7 @@ from appium import webdriver
 
 from tests.Mobile import config
 import utils
-from utils.allure import attach
+from utils.allure import attachments
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -32,15 +32,15 @@ def driver_management(request):
         '''
         request.node is an "item" because we use the default "function" scope
         '''
-        utils.allure.attach.screenshot(name='Last screenshot')
-        utils.allure.attach.screen_xml_dump()
+        utils.allure.attachments.add_screenshot(name='Last screenshot')
+        utils.allure.attachments.screen_xml_dump()
 
     session_id = browser.driver.session_id
 
     allure.step('Close app session')(browser.quit)()
 
     if config.settings.run_on_browserstack:
-        attach.video_from_browserstack(session_id)
+        attachments.video_from_browserstack(session_id)
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -52,3 +52,9 @@ def pytest_runtest_makereport(item: Item, call: CallInfo):  # noqa
     # set a report attribute for each phase of a call, which can
     # be "setup", "call", "teardown"
     setattr(item, 'result_of_' + result_of_.when, result_of_)
+
+
+@pytest.fixture(scope='session', autouse=True)
+def patch_selene():
+    import utils.selene.patch_selector_strategy  # noqa
+    import utils.selene.patch_element_mobile_commands  # noqa

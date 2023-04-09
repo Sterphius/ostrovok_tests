@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 import re
 
 from tests.Mobile import config
-from utils.utils.python import monkey
+from utils.python import monkey
 
 
 def is_word_with_dashes_underscores_or_numbers(selector):
@@ -31,7 +31,7 @@ def _by(selector: str | Tuple[str, str]):
         or selector.startswith('(')
         or selector.startswith('*/')
     ):
-        return By.XPATH, selector
+        return AppiumBy.XPATH, selector
 
     # --- Handle custom conventions ---
     if selector.startswith('#') and is_word_with_dashes_underscores_or_numbers(

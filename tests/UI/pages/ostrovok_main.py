@@ -96,4 +96,5 @@ class OstrovokMainPage:
             browser.element('html').should(have.attribute('lang').value(language))
         return self
 
+
 main_page = OstrovokMainPage()

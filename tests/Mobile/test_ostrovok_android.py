@@ -14,11 +14,11 @@ from tests.Mobile.app.ostrovok_app import ostrovok_app
 @pytest.mark.parametrize('city', ['Moscow'])
 @pytest.mark.parametrize('results_count', [2])
 def test_hotel_search_results_for_popular_city(city, results_count):
-    ostrovok_app.skip_auth()\
-        .location_input_click()\
-        .choose_city_from_popular(city)\
-        .search_button_click()\
-        .results_are_visible(results_count)
+    ostrovok_app.skip_auth()
+    ostrovok_app.search_screen.location_input_click()
+    ostrovok_app.search_screen.choose_city_from_popular(city)
+    ostrovok_app.search_screen.search_button_click()
+    ostrovok_app.search_screen.results_are_visible(results_count)
 
 
 @allure.tag('Mobile')
@@ -42,7 +42,7 @@ def test_login():
 @allure.severity(Severity.CRITICAL)
 @pytest.mark.parametrize('results_count', [2])
 def test_support(results_count):
-    ostrovok_app.skip_auth()\
-        .support_nav_button_click()\
-        .support_phone_call_click()\
-        .at_least_support_number_results_appeared(results_count)
+    ostrovok_app.skip_auth()
+    ostrovok_app.navigation.support_nav_button_click()
+    ostrovok_app.support_screen.support_phone_call_click()
+    ostrovok_app.support_screen.at_least_support_number_results_appeared(results_count)
