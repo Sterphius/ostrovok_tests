@@ -1,0 +1,17 @@
+{
+    "status": "ok",
+    "data": {
+        "direction": "open",
+        "visa": "issuance_terminated",
+        "documents": "pcr_or_antibodies_or_vaccine",
+        "is_avia_open": false,
+        "special_form_needed": true,
+        "has_quarantine": false,
+        "quarantine_duration": null,
+        "link": "https://www.cdc.gov/coronavirus/2019-ncov/travelers/international-travel/index.html",
+        "description": "",
+        "has_additional_test": false,
+        "docs_unknown": false,
+        "modified_at": "10/04/2023"
+    }
+}
