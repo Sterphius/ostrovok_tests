@@ -31,6 +31,7 @@
   * ✅ Отображения телефонов поддержки
 
 
+
 ## Технологический стек
 Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Telegram
 
@@ -46,10 +47,11 @@ Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Te
   <img src="resources/telegram-logo.png" width="40" height="40"  alt="Telegram"/>
 </p>
 
+
 ## Как запустить
 Перед выполением необходимо:
 * В .env определить параметры конфигурации:
-    - login, password for selenoid в .env  
+    - login, password for selenoid в .env
     SELENOID_LOGIN=user  
     SELENOID_PASSWORD=password
     - credentials пользователя ostrovok.ru в .env  
