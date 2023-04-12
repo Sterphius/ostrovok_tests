@@ -1,38 +1,37 @@
-## Пример организации автотестирования для cервиса бронирования Ostrovok.ru
-> Ostrovok.ru — российский сервис онлайн-бронирования отелей.
+## An example of organizing auto-testing for the Ostrovok.ru booking service
+> Ostrovok.ru is a Russian online hotel booking service.
 
 <img src="resources/Ostrovok_logo.png" alt="Ostrovok_logo" border="0" />
 
-## Реализованы тесты:
+## Impemented tests:
 * UI
-  * ✅ Результатов поиска
-  * ✅ Логина с помощью e-mail
-  * ✅ Изменения языка
-  * ✅ Локализации заголовка
-  * ✅ Поиска и изменения валюты
-  * ✅ Поиска неизвестной валюты
+  * ✅ Search results
+  * ✅ User login via e-mail
+  * ✅ Page language check
+  * ✅ Header localisation
+  * ✅ Search and change currency
+  * ✅ Search for unlisted currency
     
 * API
-  * ✅ Получения списка популярных направлений
-  * ✅ Получения ограничений в связи с COVID-19 \
-  С  параметрами:
+  * ✅ Get list of popular destinations
+  * ✅ Obtaining restrictions due to COVID-19 \
+  With parameters:
     > country_code: ['us', 'ru'] \
     > lang: ['en', 'ru']
-  * ✅ Списка возвращаемых праздников
-  * ✅ Истории поиска
-  * ✅ Проверка результатов поиска \
-    С  параметрами:
+  * ✅ Return of holidays list
+  * ✅ Search history
+  * ✅ Search results query \
+    With parameters:
     > query: ['Moscow, Russia', 'Istanbul, Turkiye'] \
     > locale: ['en', 'ru']
 
 * Android
-  * ✅ Результат поиска отелей для популярного города
-  * ✅ Логина пользователя с помощью e-mail
-  * ✅ Отображения телефонов поддержки
+  * ✅ Find hotels for popular city
+  * ✅ User login via e-mail
+  * ✅ Support phones displays
 
 
-
-## Технологический стек
+## Technology stack
 Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Telegram
 
 <p  align="center">
@@ -47,21 +46,20 @@ Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Te
   <img src="resources/telegram-logo.png" width="40" height="40"  alt="Telegram"/>
 </p>
 
-
-## Как запустить
-Перед выполением необходимо:
-* В .env определить параметры конфигурации:
-    - login, password for selenoid в .env
+## How to launch
+Before execution, you must:
+* Define configuration options:
+    - login, password for selenoid in .env file
     SELENOID_LOGIN=user  
     SELENOID_PASSWORD=password
-    - credentials пользователя ostrovok.ru в .env  
+    - ostrovok.ru user credentials in .env file
     TEST_USER_EMAIL=some_mail@gmail.com  
     TEST_USER_PASSWORD=password
-    - в config.personal.env добавить browserstack userName и accessKey
+    - add browserstack userName and accessKey in config.personal.env
     browserstack.userName='userName'
     browserstack.accessKey='accessKey'
 
-### Локально
+### Local launch
 ```bash
 pip install poetry
 poetry install
@@ -69,19 +67,19 @@ source .venv/bin/activate
 env context=$CONTEXT pytest $TESTS_FOLDER
 ```
 
-### Переменные для запуска
-* TESTS_FOLDER - папка с тестами\
+### Run variables
+* TESTS_FOLDER - tests folder\
 tests/API\
 tests/Mobile\
 tests/UI\
 Default value: . (run all tests)
 
-* CONTEXT - контекст для запуска мобильного приложения\
+* CONTEXT - context for launching a mobile application\
 local - run via Appium on localhost\
 personal - run via BrowserStack\
 Default value: personal
 
-### Удаленно
+### Remote launch
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -90,22 +88,22 @@ poetry install
 env context=$CONTEXT pytest $TESTS_FOLDER
 ```
 
-### Видео о прохождении тестов
+### Tests run video
 * UI browser tests  
 <img src="resources/test_run.gif" alt="video test" border="0" />
 
 * Mobile  
 <img src="resources/mobile.gif" alt="video test" border="0" />
 
-### Запуск в Jenkins
-Статистика по запускам <br >
-<img src="resources/allure_stats.png" alt="Статистика по запускам" border="0">
+### Launch in Jenkins
+Tests run statistics <br >
+<img src="resources/allure_stats.png" alt="Tests run statistics" border="0">
 
-### Параметры запуска <br >
+### Launch variables <br >
 <img src="resources/jenkins_params.png" alt="Jenkins" border="0">
 
-### Отчёт о прохождении автотестов в Allure Report
+### Allure Report
 <img src="resources/allure_report.png" alt="Allure-Report" border="0">
 
-### Уведомления о прохождении автотестов в Telegram
+### Tests run notification message in Telegram
 <img src="resources/telegram_notification.png" alt="telegram-bot" border="0">
