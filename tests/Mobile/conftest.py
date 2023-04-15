@@ -32,7 +32,7 @@ def driver_management(request):
         '''
         request.node is an "item" because we use the default "function" scope
         '''
-        utils.allure.attachments.add_screenshot(name='Last screenshot')
+        utils.allure.attachments.add_screenshot(browser=browser)
         utils.allure.attachments.screen_xml_dump()
 
     session_id = browser.driver.session_id

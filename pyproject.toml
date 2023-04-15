@@ -21,7 +21,7 @@ selene = {allow-prereleases = true, version = "^2.0.0-beta.17"}
 voluptuous = "^0.13.1"
 
 [tool.pytest.ini_options]
-addopts="-vv --alluredir=allure-results --clean-alluredir"
+addopts="--alluredir=allure-results --clean-alluredir"
 
 [build-system]
 requires = ["poetry-core"]

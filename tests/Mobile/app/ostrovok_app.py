@@ -1,6 +1,9 @@
 import allure
 from selene import browser, have
 
+from tests.Mobile.app.locators import more_navigation_button, user_email, support_navigation_button, \
+    support_phone_call_button, recycler
+
 
 class OstrovokMobileApp:
     def __init__(self):
@@ -28,21 +31,11 @@ class OstrovokMobileApp:
     def user_is_logged_in(self, email):
         with allure.step(f'Click on more navigation button'):
             # TODO: ask devs for id
-            browser.element('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
-                            '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
-                            '/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget'
-                            '.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[4]') \
-                .click()
+            more_navigation_button.click()
 
         with allure.step(f'User with email {email} is logged in'):
             # TODO: ask devs for id
-            browser.element('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
-                            '.widget.FrameLayout/android.widget.LinearLayout/'
-                            'android.widget.FrameLayout/android.widget.RelativeLayout/android.widget'
-                            '.LinearLayout/android.widget.FrameLayout[1]/'
-                            'androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/'
-                            'android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/'
-                            'android.widget.LinearLayout[1]/android.widget.TextView') \
+            user_email \
                 .should(have.text(email))
         return self
 
@@ -51,11 +44,7 @@ class MainNavigation:
     def support_nav_button_click(self):
         with allure.step(f'Click support navigation button'):
             # TODO: ask devs for id
-            browser.element('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
-                            '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
-                            '/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget'
-                            '.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[3]') \
-                .click()
+            support_navigation_button.click()
         return self
 
 
@@ -63,13 +52,7 @@ class SupportScreen:
     def support_phone_call_click(self):
         with allure.step(f'Click support phone call button'):
             # TODO: ask devs for id
-            browser.element('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
-                            '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
-                            '/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget'
-                            '.FrameLayout[1]/androidx.viewpager.widget.ViewPager/'
-                            'android.widget.FrameLayout/android.widget.LinearLayout/'
-                            'androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]') \
-                .click()
+            support_phone_call_button.click()
         return self
 
     def at_least_support_number_results_appeared(self, count):
@@ -99,13 +82,6 @@ class SearchScreen:
     def results_are_visible(self, results_count):
         with allure.step(f'At least {results_count} results are visible'):
             # TODO: ask devs for id
-            recycler = browser.element('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/'
-                                       'android.widget.FrameLayout/android.widget.LinearLayout/'
-                                       'android.widget.FrameLayout/android.widget.RelativeLayout/'
-                                       'android.widget.LinearLayout/android.widget.FrameLayout[1]/'
-                                       'androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/'
-                                       'android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/'
-                                       'androidx.recyclerview.widget.RecyclerView[2]')
             search_count = recycler.all('//androidx.recyclerview.widget.RecyclerView/*')
             search_count.should(have.size_greater_than_or_equal(results_count))
         return self

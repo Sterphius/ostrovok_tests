@@ -4,8 +4,9 @@ import allure
 
 from selene import browser, have
 
-from tests.UI.controls.input import Input
 from tests.UI.data.user import User
+from tests.UI.pages.locators import destination_input, search_button, user_email_input, user_password_input, \
+    sign_in_button, login_control, currency_widget, currency_widget_code, progress_bar, hotel_search_list
 from tests.UI.pages.resources import currency_not_found_texts, currency_placeholder
 
 
@@ -31,36 +32,36 @@ class OstrovokMainPage:
     def fill_destination(self, value: str, autocomplete: bool = False):
         with allure.step(f'Type city {value} and click search'):
             if autocomplete:
-                browser.element('[data-testid=destination-input]')\
+                destination_input \
                     .type(value)\
                     .press_enter()
             else:
-                Input(browser.element('[data-testid=destination-input]')) \
-                    .fill_text(value)
-            browser.element('[data-testid="search-button"]').click()
+                destination_input \
+                    .type(value)
+            search_button.click()
         return self
 
     def login_user(self, user: User):
         with allure.step(f'Login user with credentials'):
-            browser.element('[class^=Control-module__control]').click()
-            Input(browser.element('[data-testid="user-widget-sign-in-email-input"]')).fill_text(user.email)
-            Input(browser.element('[data-testid="user-widget-sign-in-password-input"]')).fill_text(user.password)
-            browser.element('[data-testid="user-widget-sign-in-button"]').click()
+            login_control.click()
+            user_email_input.type(user.email)
+            user_password_input.type(user.password)
+            sign_in_button.click()
         return self
 
     def user_is_logged_in(self, user: User):
         with allure.step(f'Check that user with {user.email} is logged in'):
-            browser.element('[class^=Control-module__username]').should(have.text(user.email))
+            login_control.should(have.text(user.email))
         return self
 
     def find_and_choose_currency(self, currency: str, language: str, choose: bool = False):
         with allure.step(f'Find currency {currency} in language {language}'):
-            browser.element('[class^=CurrencyWidget-module__control]').click()
+            currency_widget.click()
             selector = f'[class^="Input-module__control"][placeholder="{currency_placeholder[language]}"]'
             browser.element(selector).set_value(currency)
         with allure.step(f'Choose currency {currency} from list'):
             if choose:
-                browser.all('[class^=CurrencyWidget-module__code]').element_by(have.text(currency)).click()
+                currency_widget_code.element_by(have.text(currency)).click()
         return self
 
     def get_current_currency(self):
@@ -82,8 +83,8 @@ class OstrovokMainPage:
 
     def results_found(self, timeout: int, count: int):
         with allure.step(f'Find at least {count} hotel results in {timeout} seconds'):
-            browser.element('.zenserpresult-ready').with_(timeout=timeout)
-            browser.all('.hotel-wrapper').should(have.size_greater_than_or_equal(count))
+            progress_bar.with_(timeout=timeout)
+            hotel_search_list.should(have.size_greater_than_or_equal(count))
         return self
 
     def title_has_text(self, text: str):

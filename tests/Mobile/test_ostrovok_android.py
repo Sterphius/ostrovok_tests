@@ -40,9 +40,8 @@ def test_login():
 @allure.feature('Mobile')
 @allure.story('Support')
 @allure.severity(Severity.CRITICAL)
-@pytest.mark.parametrize('results_count', [2])
-def test_support(results_count):
+def test_support():
     ostrovok_app.skip_auth()
     ostrovok_app.navigation.support_nav_button_click()
     ostrovok_app.support_screen.support_phone_call_click()
-    ostrovok_app.support_screen.at_least_support_number_results_appeared(results_count)
+    ostrovok_app.support_screen.at_least_support_number_results_appeared(2)
