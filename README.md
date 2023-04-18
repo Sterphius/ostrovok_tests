@@ -11,7 +11,7 @@
   * ✅ Header localisation
   * ✅ Search and change currency
   * ✅ Search for unlisted currency
-    
+
 * API
   * ✅ Get list of popular destinations
   * ✅ Obtaining restrictions due to COVID-19 \
@@ -50,10 +50,10 @@ Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Te
 Before execution, you must:
 * Define configuration options:
     - login, password for selenoid in .env file
-    SELENOID_LOGIN=user  
+    SELENOID_LOGIN=user
     SELENOID_PASSWORD=password
     - ostrovok.ru user credentials in .env file
-    TEST_USER_EMAIL=some_mail@gmail.com  
+    TEST_USER_EMAIL=some_mail@gmail.com
     TEST_USER_PASSWORD=password
     - add browserstack userName and accessKey in config.personal.env
     browserstack.userName='userName'
@@ -89,10 +89,10 @@ env context=$CONTEXT pytest $TESTS_FOLDER
 ```
 
 ### Tests run video
-* UI browser tests  
+* UI browser tests
 <img src="resources/test_run.gif" alt="video test" border="0" />
 
-* Mobile  
+* Mobile
 <img src="resources/mobile.gif" alt="video test" border="0" />
 
 ### Launch in Jenkins
@@ -103,6 +103,7 @@ Tests run statistics <br >
 <img src="resources/jenkins_params.png" alt="Jenkins" border="0">
 
 ### Allure Report
+Report available at https://sterphius.github.io/ostrovok_tests/
 <img src="resources/allure_report.png" alt="Allure-Report" border="0">
 
 ### Tests run notification message in Telegram

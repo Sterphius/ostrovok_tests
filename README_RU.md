@@ -11,7 +11,7 @@
   * ✅ Локализации заголовка
   * ✅ Поиска и изменения валюты
   * ✅ Поиска неизвестной валюты
-    
+
 * API
   * ✅ Получения списка популярных направлений
   * ✅ Получения ограничений в связи с COVID-19 \
@@ -49,11 +49,11 @@ Python, Pytest, Selene, PyCharm, Requests, Appium, Jenkins, Selenoid, Github, Te
 ## Как запустить
 Перед выполением необходимо:
 * В .env определить параметры конфигурации:
-    - login, password for selenoid в .env  
-    SELENOID_LOGIN=user  
+    - login, password for selenoid в .env
+    SELENOID_LOGIN=user
     SELENOID_PASSWORD=password
-    - credentials пользователя ostrovok.ru в .env  
-    TEST_USER_EMAIL=some_mail@gmail.com  
+    - credentials пользователя ostrovok.ru в .env
+    TEST_USER_EMAIL=some_mail@gmail.com
     TEST_USER_PASSWORD=password
     - в config.personal.env добавить browserstack userName и accessKey
     browserstack.userName='userName'
@@ -89,10 +89,10 @@ env context=$CONTEXT pytest $TESTS_FOLDER
 ```
 
 ### Видео о прохождении тестов
-* UI browser tests  
+* UI browser tests
 <img src="resources/test_run.gif" alt="video test" border="0" />
 
-* Mobile  
+* Mobile
 <img src="resources/mobile.gif" alt="video test" border="0" />
 
 ### Запуск в Jenkins
@@ -103,6 +103,7 @@ env context=$CONTEXT pytest $TESTS_FOLDER
 <img src="resources/jenkins_params.png" alt="Jenkins" border="0">
 
 ### Отчёт о прохождении автотестов в Allure Report
+Отчёт доступен по ссылке https://sterphius.github.io/ostrovok_tests/
 <img src="resources/allure_report.png" alt="Allure-Report" border="0">
 
 ### Уведомления о прохождении автотестов в Telegram
